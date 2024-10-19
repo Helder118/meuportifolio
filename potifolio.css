@@ -1,0 +1,233 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body{
+    background-color: black;
+    color: white;
+    position: relative;
+}
+
+section{
+    width: 100%;
+    height: 100vh;
+    padding: 10px;
+    margin-top: 10px;
+
+}
+
+.home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+h1{
+    
+    text-align: center;
+    padding: 15px;
+    font-size: 3em;
+    margin-top: 100px;
+    text-transform: capitalize;
+}
+
+h2{
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+
+.sobre{
+    display: flex;
+    width: 80%;
+    margin: auto;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.sobre div{
+    width: 50%;
+    font-size: 1.3em;
+}
+
+.sobre div img{
+    width: 80%;
+    border-radius: 50%;
+}
+
+h1 span{
+    position: relative;
+}
+
+
+h1 span::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    opacity: 1;
+    border-left: 2px solid white;
+    animation: digitando 10s infinite alternate;
+    width: 100%;
+    left: 0%;
+    background-color: black;
+
+}
+
+.hidden{
+    opacity: 0;
+    filter: blur(15x);
+    transition: all 2s;
+    transform: translateX(-100%);
+    text-align: center;
+}
+
+.show{
+    opacity: 1;
+    filter: 0px;
+    transition: all 2s;
+    transform: translateX(0%);
+    text-align: center;
+}
+
+
+
+@keyframes cursor {
+    0%{
+        border-left: 2px solid rgb(0, 0, 0);
+    }
+}
+
+@keyframes digitando {
+    0%{
+       left: 0%; 
+    }
+
+    100%{
+        left: calc(100% + 20px);
+        width: 10px;
+    }
+}
+
+.skills{
+    width: 80%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 30px;
+    gap: 100px;
+    margin: auto;
+}
+
+.skills div{
+    width: 15%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.skills div img{
+    width: 100%;
+}
+
+.h2{
+    font-size: 3em;
+}
+
+
+@media screen and (max-width:800px) {
+
+    section{
+        height:auto;
+    }
+
+    h1{
+        font-size: 1.5em;
+        margin-top: 0px;
+    }
+
+    .h2{
+        margin-top: 10%;
+        font-size: 1.5em;
+    }
+
+    .sobre{
+        flex-direction: column-reverse;
+    }
+
+    .sobre div{
+        width: 100%;
+
+    }
+    .skills{
+
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .skills div{
+        width: 50%;
+        gap: 5px;
+    }
+
+    .skills div p{
+        display: none;
+    } 
+
+    .contacto{
+        left: 0px;
+        top: 0px;
+    }
+}
+
+
+
+.mostra{
+    opacity: 1;
+    visibility: visible;
+    filter: 0px;
+    transform: translateY(0%);
+    text-align: center;
+}
+
+.esconde{
+    opacity: 0;
+    visibility: hidden;
+    filter: blur(15x);
+    transform: translateY(-100%);
+    text-align: center;
+    width: 0px;
+}
+
+.contacto{
+    position: fixed;
+    left: -25px;
+    top: 50px;
+    transition: all 0.5s;
+}
+
+.contacto a{
+    color: rgb(240, 247, 235);
+    width: 50px;
+    background-color: rgba(0, 255, 255, 0.342);
+    font-size: 2em;
+    display: block;
+    text-align: center;
+    padding: 5px;
+    transition: all 0.5s;
+    border-radius: 5px;
+}
+
+.rede:hover{
+    width: 150px;
+    transition: all 0.5s;
+}
+
+.contacto:hover{
+    left: 0px;
+    transition: all 0.5s;
+}
